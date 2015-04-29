@@ -4,6 +4,7 @@ import six
 import re
 import string
 from webhelpers2.text import truncate as abbrev
+# TODO: add test
 # from .strutils import force_unicode
 
 __all__ = (
@@ -322,8 +323,6 @@ def urlize(text, trim_url_limit=None, attrs={}, url_re=URL_RE_CMP, autoescape=Fa
         autoescape:     Trueを与えるとタグエスケープを行います。
 
     """
-    # from strutils import abbrev
-
     if autoescape:
         text = escape(text)
 
