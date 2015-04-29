@@ -3,6 +3,7 @@
 import six
 import re
 import string
+import markupsafe
 from webhelpers2.text import truncate as abbrev
 # TODO: add test
 # from .strutils import force_unicode
@@ -52,11 +53,7 @@ def escape(html):
     """
     Returns the given HTML with ampersands, quotes and angle brackets encoded.
     """
-    return (force_unicode(html).replace('&', '&amp;')
-                               .replace('<', '&lt;')
-                               .replace('>', '&gt;')
-                               .replace('"', '&quot;')
-                               .replace("'", '&#39;'))
+    return six.text_type(markupsafe.escape(html))
 
 
 def escape_entities(text):

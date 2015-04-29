@@ -4,6 +4,7 @@ requires = [
     "BeautifulSoup4",
     "six",
     "webhelpers2",
+    "markupsafe",
 ]
 
 setup(name="bphtml",
